@@ -19,7 +19,7 @@ namespace CelsiusIntoFahrenheit.Controllers
         }
 
 
-        public IActionResult Convertor()
+        public IActionResult Converter()
         {
             return View();
         }
@@ -39,18 +39,14 @@ namespace CelsiusIntoFahrenheit.Controllers
 
             }
             else
-
             {
 
-                ViewData["Result"] = $"{celsius}°C is equivalent to {fahrenheit}°F.";
+                ViewData["CelsiusTemperature"] = celsius;
 
-                ViewData["Formula"] = $@"\({{{celsius}}}^\circ \text{{C}} \times \frac{{9}}{{5}} + 32 = {{{fahrenheit}}}^\circ \text{{F}}\)";
-
-                ViewData["CelsiusTemperature"] = celsius > 70 ? 70 : celsius;
-
+                ViewData["FahrenheitTemperature"] = fahrenheit;
             }
 
-            return View("Convertor");
+            return View("Converter");
         }
 
 

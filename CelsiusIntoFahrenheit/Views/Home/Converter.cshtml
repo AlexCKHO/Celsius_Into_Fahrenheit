@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Convertor";
+    ViewData["Title"] = "Converter";
 }
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -8,7 +8,7 @@
 <div class="container-fluid d-flex justify-content-center align-items-center full-height">
     <div class="bordered-box">
 
-        <h1 class="text-center mb-3">Celsius to Fahrenheit Convertor</h1>
+        <h1 class="text-center mb-3 text-white">Celsius to Fahrenheit Converter</h1>
 
         <div class="row">
 
@@ -17,11 +17,11 @@
             <div class="col-md-8">
                 <form method="post" action="/Home/ConvertCelsiusToFahrenheit">
                     <div class="form-group">
-                        <label for="celsius">Please Enter °C:</label>
+                        <label for="celsius" style="font-size: 1.5em">Please Enter °C:</label>
                         <input type="number" step="0.1" name="celsius" id="celsius" class="form-control" required />
                     </div> 
                     <div class="text-center mb-4">
-                        <input type="submit" value="Convert" class="btn btn-primary" />
+                        <input type="submit" value="Convert" class="btn btn-outline-dark" />
                     </div>
                 </form>
 
@@ -32,13 +32,13 @@
                     </div>
                 }
 
-                @if (ViewData["Result"] != null)
+                @if (ViewData["CelsiusTemperature"] != null && ViewData["FahrenheitTemperature"] != null)
                 {
-                    <div class="mt-4 alert alert-info text-center">
-                        <strong>@ViewData["Result"].ToString()</strong>
+                    <div class="mt-4 alert alert-success text-center">
+                        <strong>@ViewData["CelsiusTemperature"]°C is equivalent to @ViewData["FahrenheitTemperature"]°F</strong>
                         <br>
                         <br>
-                        <span>@ViewData["Formula"]</span>
+                        <span>\(@ViewData["CelsiusTemperature"]^\circ \text{C} \times \frac{{9}}{{5}} + 32 = {@ViewData["FahrenheitTemperature"]}^\circ \text{F}\)</span>
                     </div>
                 }
             </div>
@@ -88,6 +88,7 @@
 
 <script>
     function setThermometerTemperature(celsiusTemp) {
+
         let tempVal = document.getElementById("temp-val");
         let tempFill = document.getElementById("temp-fill");
         let tempF = nearest10th(CToF(celsiusTemp));
@@ -98,8 +99,10 @@
         let scaleY = 0,
             scaleYMax = 0.995;
         let minTempC = -53,
-            maxTempC = 70; // Changed to max value of 70
-        scaleY += (celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC);
+            maxTempC = 70;
+
+
+        scaleY += ((celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC)) * 1.0907555;
 
         if (scaleY > scaleYMax)
             scaleY = scaleYMax;
@@ -111,10 +114,10 @@
     }
 
     // This will update the thermometer based on your conversion result
-    @if (ViewData["Result"] != null)
+    @if (ViewData["CelsiusTemperature"] != null)
     {
-        <text>
-            setThermometerTemperature(@ViewData["CelsiusTemperature"]);
+         <text>
+            setThermometerTemperature(@Html.Raw(Json.Serialize(ViewData["CelsiusTemperature"])));
          </text>
     }
 

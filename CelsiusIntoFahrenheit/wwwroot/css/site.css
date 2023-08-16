@@ -15,23 +15,64 @@ html {
 
 body {
     margin-bottom: 60px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
 }
 
-.text-center mb-3 {
-    margin-bottom: auto;
+footer {
+    background-color: white;
+    margin-top: auto;
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.intro {
+    text-align: left;
+}
+
+
+
+.btn.btn-outline-light {
+    padding: 10px 20px;
+}
+
+.intro,
+.intro-paragraph,
+.btn.btn-outline-light {
+    font-size: 150%; 
+}
+
+
+
 
 .row {
-    padding-top: 35px;
+    border-radius: 7px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     display: flex;
     align-items: center; /* Vertical alignment */
     justify-content: center; /* Horizontal alignment */
+    background: rgba(255, 255, 255, .85)
 }
 
 
 /* Custom style for centering the bordered box */
 .full-height {
-    min-height: 100vh;
+    min-height: 90vh;
     padding-bottom: 60px;
 }
 
@@ -43,13 +84,13 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     font-size: 1.2rem; /* Decreased font size from 1.5rem to 1.2rem */
     padding: 20px 50px 50px 50px; /* Combined padding values */
+    background: rgba(255, 255, 255, 0.5)
 }
 
 
-/* Adjust the size of the button */
 .btn-primary {
-    font-size: 1.2rem; /* Adjusted from 1.5rem to 1.2rem */
-    padding: 10px 20px; /* Adjusted from 12px 25px to 10px 20px */
+    font-size: 1.2rem; 
+    padding: 10px 20px; 
 }
 
 
@@ -190,3 +231,5 @@ body {
     width: 2em;
     height: 2em;
 }
+
+

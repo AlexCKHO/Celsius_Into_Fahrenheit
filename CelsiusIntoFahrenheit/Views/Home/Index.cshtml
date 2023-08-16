@@ -2,20 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <img src="path_to_image_of_thermometer_or_related_graphic" alt="Thermometer" style="width: 100px; height: auto; margin: 20px 0;">
 
-    <p>
-        Explore my Celsius to Fahrenheit Converter, crafted with the ASP.NET MVC framework. The application boasts a lucid interface, presents the conversion via the MathJax library, is enhanced by Bootstrap's responsiveness, and offers a visual treat with an interactive thermometer. 
+
+<div class="intro text-white">
+    <h1 class="display-4" style="margin: 40px 0;">Welcome</h1>
+    <hr style="margin: 40px 0;">
+    <p class="intro-paragraph">
+        Explore my Celsius to Fahrenheit Converter, developed using the ASP.NET MVC framework. The application has a clear interface,
+        demonstrates the conversion using the MathJax library to display the formula,
+        enhanced with Bootstrap, and offers visual feedback via an interactive thermometer.
     </p>
-
-    <button class="btn btn-primary" onclick="window.location.href='/Home/Convertor'">Dive into Converter</button>
-
-    <hr style="margin: 40px 0;"> <!-- Divider for visual separation -->
-
-    <h3>Potential Enhancements:</h3>
-    <p>
-        While the current version of the converter suffices primary needs, envision future iterations with multi-scale conversions, historical data archiving, or even real-time weather data amalgamation. Such advancements could amplify the application's scalability, echoing contemporary web development paradigms.
-    </p>
+    <button class="btn btn-outline-light" style="margin: 20px 0;"  onclick="window.location.href='/Home/Converter'">Try out the Converter</button>
 </div>
+
