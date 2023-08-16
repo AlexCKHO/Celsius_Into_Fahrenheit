@@ -49,7 +49,7 @@ This web application allows users to convert temperatures from Celsius to Fahren
 
 2. **Clone the Repository**:
    ```bash
-   git clone [repository-url]
+   git clone [repository-url](https://github.com/AlexCKHO/Celsius_Into_Fahrenheit.git)
    ```
 
 3. **Navigate to the Project Directory**:
