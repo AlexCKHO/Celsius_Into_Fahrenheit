@@ -29,20 +29,25 @@ namespace CelsiusIntoFahrenheit.Controllers
         {
             double fahrenheit = convertingCToF(celsius);
 
-            if ((Double.IsPositiveInfinity(fahrenheit)) || Double.IsNegativeInfinity(fahrenheit)) { 
-                
+            // Check if the calculated Fahrenheit value is overflow or underflow
+
+            if ((Double.IsPositiveInfinity(fahrenheit)) || Double.IsNegativeInfinity(fahrenheit))
+            {
+
                 ViewData["Error"] = "The value you entered is outside the range of acceptable values. " +
                     "Please enter a number between -9.9871840825684201e+306 and 9.9871840825684201e+306.";
- 
+
             }
-            else {
+            else
+
+            {
 
                 ViewData["Result"] = $"{celsius}°C is equivalent to {fahrenheit}°F.";
 
-                // Set the formula in ViewData
                 ViewData["Formula"] = $@"\({{{celsius}}}^\circ \text{{C}} \times \frac{{9}}{{5}} + 32 = {{{fahrenheit}}}^\circ \text{{F}}\)";
 
-                ViewData["CelsiusTemperature"] = celsius;
+                ViewData["CelsiusTemperature"] = celsius > 70 ? 70 : celsius;
+
             }
 
             return View("Convertor");

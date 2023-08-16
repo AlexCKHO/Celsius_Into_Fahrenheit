@@ -1,36 +1,50 @@
 html {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 14px;
-  }
+    html {
+        font-size: 14px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+.text-center mb-3 {
+    margin-bottom: auto;
+}
+
+.row {
+    padding-top: 35px;
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+}
+
 
 /* Custom style for centering the bordered box */
 .full-height {
     min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 .bordered-box {
     width: 100%;
     max-width: 1000px; /* Decreased max-width from 1200px to 1000px */
     border: 1px solid #ddd;
-    padding: 50px; /* Decreased padding from 75px to 50px */
     border-radius: 7px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     font-size: 1.2rem; /* Decreased font size from 1.5rem to 1.2rem */
+    padding: 20px 50px 50px 50px; /* Combined padding values */
 }
+
 
 /* Adjust the size of the button */
 .btn-primary {
@@ -159,14 +173,14 @@ body {
     flex-basis: 0.3em;
 }
 
-.thermometer__tube:before {
+    .thermometer__tube:before {
         background: linear-gradient(hsla(0,0%,100%,0.5),hsla(0,0%,100%,0)) 100% 0 / 25% 100% no-repeat;
         box-shadow: -0.05em 0 0.05em hsla(0,0%,0%,0.2) inset;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1;
-}
+    }
 
 .thermometer__bulb {
     background-image: radial-gradient(100% 100% at 65% 35%,hsl(355,85%,55%) 12%,hsl(355,85%,40%) 13%,hsl(355,85%,30%));

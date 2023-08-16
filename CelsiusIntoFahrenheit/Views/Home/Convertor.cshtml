@@ -7,16 +7,19 @@
 
 <div class="container-fluid d-flex justify-content-center align-items-center full-height">
     <div class="bordered-box">
+
         <h1 class="text-center mb-3">Celsius to Fahrenheit Convertor</h1>
 
         <div class="row">
+
             <!-- Form and Result Section -->
+
             <div class="col-md-8">
                 <form method="post" action="/Home/ConvertCelsiusToFahrenheit">
                     <div class="form-group">
-                        <label for="celsius">Enter Celsius:</label>
-                        <input type="number" step="0.01" name="celsius" id="celsius" class="form-control" required />
-                    </div>
+                        <label for="celsius">Please Enter °C:</label>
+                        <input type="number" step="0.1" name="celsius" id="celsius" class="form-control" required />
+                    </div> 
                     <div class="text-center mb-4">
                         <input type="submit" value="Convert" class="btn btn-primary" />
                     </div>
@@ -41,6 +44,7 @@
             </div>
 
             <!-- Thermometer Section -->
+
             <div class="col-md-4 d-flex align-items-center">
                     <div class="thermometer">
                         <div class="thermometer__inner">
@@ -94,7 +98,7 @@
         let scaleY = 0,
             scaleYMax = 0.995;
         let minTempC = -53,
-            maxTempC = 60;
+            maxTempC = 70; // Changed to max value of 70
         scaleY += (celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC);
 
         if (scaleY > scaleYMax)
@@ -111,7 +115,7 @@
     {
         <text>
             setThermometerTemperature(@ViewData["CelsiusTemperature"]);
-        </text>
+         </text>
     }
 
         // Convert Celsius to Fahrenheit
@@ -119,14 +123,10 @@
             return (celsius * 9 / 5) + 32;
         }
 
-    // Convert Fahrenheit to Celsius (not used but may be handy later)
-    function FToC(fahrenheit) {
-        return (fahrenheit - 32) * 5 / 9;
-    }
-
     // Round to the nearest 10th
     function nearest10th(n) {
         return Math.round(n * 10) / 10;
     }
+
 
 </script>
