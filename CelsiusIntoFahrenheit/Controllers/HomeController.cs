@@ -18,45 +18,32 @@ namespace CelsiusIntoFahrenheit.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         public IActionResult Convertor()
         {
             return View();
         }
 
-        /*        [HttpPost]
-                public IActionResult ConvertCelsiusToFahrenheit(double celsius)
-                {
-                    double fahrenheit = convertingCToF(celsius);
-                    ViewData["Result"] = $"{celsius}°C is equivalent to {fahrenheit}°F.";
-                    return View("Convertor");
-                }*/
-
         [HttpPost]
         public IActionResult ConvertCelsiusToFahrenheit(double celsius)
         {
-            if (celsius < -1.7976931348623157e+308 || celsius > 1.7976931348623157e+308)
-            {
-                ViewData["Error"] = "The value you entered is outside the range of acceptable values. Please enter a number between -1.7976931348623157e+308 and 1.7976931348623157e+308.";
-                return View("Convertor");
-            }
+            double fahrenheit = convertingCToF(celsius);
 
-            if((Double.IsPositiveInfinity(convertingCToF(celsius))) || Double.IsNegativeInfinity(convertingCToF(celsius))) { 
+            if ((Double.IsPositiveInfinity(fahrenheit)) || Double.IsNegativeInfinity(fahrenheit)) { 
                 
-                ViewData["Error"] = "The value you entered is outside the range of acceptable values. Please enter a number between -1.7976931348623157e+308 and 1.7976931348623157e+308.";
-                return View("Convertor");
+                ViewData["Error"] = "The value you entered is outside the range of acceptable values. " +
+                    "Please enter a number between -9.9871840825684201e+306 and 9.9871840825684201e+306.";
+ 
             }
             else {
 
-                double fahrenheit = convertingCToF(celsius);
                 ViewData["Result"] = $"{celsius}°C is equivalent to {fahrenheit}°F.";
-                return View("Convertor");
+
+                // Set the formula in ViewData
+                ViewData["Formula"] = $@"\({{{celsius}}}^\circ \text{{C}} \times \frac{{9}}{{5}} + 32 = {{{fahrenheit}}}^\circ \text{{F}}\)";
             }
 
+            return View("Convertor");
         }
 
 

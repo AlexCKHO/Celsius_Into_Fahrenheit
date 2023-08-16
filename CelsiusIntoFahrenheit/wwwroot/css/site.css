@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Custom style for centering the bordered box */
+.full-height {
+    min-height: 100vh;
+}
+
+.bordered-box {
+    width: 100%; /* Using the full width available */
+    max-width: 1200px; /* Increased max width */
+    border: 1px solid #ddd;
+    padding: 75px; /* Increased padding */
+    border-radius: 7px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem; /* Significantly increased the font size */
+}
+
+/* Adjust the size of the button */
+.btn-primary {
+    font-size: 1.5rem;
+    padding: 12px 25px;
+}
