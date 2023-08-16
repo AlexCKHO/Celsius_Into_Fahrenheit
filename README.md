@@ -24,6 +24,10 @@ This web application allows users to convert temperatures from Celsius to Fahren
 
 - **MathJax 2.7.9**
 
+## Resources Used
+
+1. Interactive Thermometer: [CodePen - Interactive Thermometer](https://codepen.io/jkantner/details/zYKLoOX)
+2. MathJax Library: [MathJax](https://www.mathjax.org/)
 
 ## Structure
 
@@ -49,7 +53,7 @@ This web application allows users to convert temperatures from Celsius to Fahren
 
 2. **Clone the Repository**:
    ```bash
-   git clone [repository-url]
+   git clone [Repo-Url]
    ```
 
 3. **Navigate to the Project Directory**:
