@@ -41,6 +41,8 @@ namespace CelsiusIntoFahrenheit.Controllers
 
                 // Set the formula in ViewData
                 ViewData["Formula"] = $@"\({{{celsius}}}^\circ \text{{C}} \times \frac{{9}}{{5}} + 32 = {{{fahrenheit}}}^\circ \text{{F}}\)";
+
+                ViewData["CelsiusTemperature"] = celsius;
             }
 
             return View("Convertor");
