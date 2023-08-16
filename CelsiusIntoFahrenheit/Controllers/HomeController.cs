@@ -46,6 +46,7 @@ namespace CelsiusIntoFahrenheit.Controllers
 
                 ViewData["Formula"] = $@"\({{{celsius}}}^\circ \text{{C}} \times \frac{{9}}{{5}} + 32 = {{{fahrenheit}}}^\circ \text{{F}}\)";
 
+                //Set the thermometer level to 70, to handle large number
                 ViewData["CelsiusTemperature"] = celsius > 70 ? 70 : celsius;
 
             }
