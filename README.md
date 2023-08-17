@@ -71,6 +71,19 @@ Use the in-built tools of ASP.NET MVC to build and run the project.
 - Click "Convert" to get the Fahrenheit equivalent.
 - Check the thermometer visualization to see the temperature representation.
 
+
+## Testing
+
+As part of this mini project, I've included a set of NUnit tests to assess the functionality of the application. These tests are designed to evaluate various scenarios and ensure the controller passes correct `ViewData` to the view page.
+
+### Running Tests
+
+1. Make sure you have NUnit
+2. Open a terminal/command prompt, navigate to the project's root directory, and run:
+   `dotnet test`
+
+To execute the NUnit tests, follow these steps:
+
 ## Limitations
 
 The application checks for overflow or underflow situations. It expects values to be between -9.9871840825684201e+306 and 9.9871840825684201e+306 for valid conversion. If outside this range, an error message is shown.
