@@ -40,13 +40,23 @@ footer {
     }
 }
 
-.intro-paragraph {
-    font-size: 2em;
-}
-
 .intro {
     text-align: left;
 }
+
+
+
+.btn.btn-outline-light {
+    padding: 10px 20px;
+}
+
+.intro,
+.intro-paragraph,
+.btn.btn-outline-light {
+    font-size: 150%; 
+}
+
+
 
 
 .row {
