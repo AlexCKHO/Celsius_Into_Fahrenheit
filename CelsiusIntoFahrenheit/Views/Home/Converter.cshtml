@@ -4,6 +4,7 @@
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="~/js/site.js"></script>
 
 <div class="container-fluid d-flex justify-content-center align-items-center full-height">
     <div class="bordered-box">
@@ -87,49 +88,11 @@
 </div>
 
 <script>
-    function setThermometerTemperature(celsiusTemp) {
-
-        let tempVal = document.getElementById("temp-val");
-        let tempFill = document.getElementById("temp-fill");
-        let tempF = nearest10th(CToF(celsiusTemp));
-
-        tempVal.setAttribute("data-c", celsiusTemp);
-        tempVal.setAttribute("data-f", tempF);
-
-        let scaleY = 0,
-            scaleYMax = 0.995;
-        let minTempC = -53,
-            maxTempC = 70;
-
-
-        scaleY += ((celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC)) * 1.0907555;
-
-        if (scaleY > scaleYMax)
-            scaleY = scaleYMax;
-        else if (scaleY < 0)
-            scaleY = 0;
-
-        tempFill.style.transform = `scaleY(${scaleY})`;
-        tempVal.title = `${celsiusTemp}°C, ${tempF}°F`;
-    }
-
     // This will update the thermometer based on your conversion result
     @if (ViewData["CelsiusTemperature"] != null)
     {
-         <text>
+        <text>
             setThermometerTemperature(@Html.Raw(Json.Serialize(ViewData["CelsiusTemperature"])));
-         </text>
+        </text>
     }
-
-        // Convert Celsius to Fahrenheit
-        function CToF(celsius) {
-            return (celsius * 9 / 5) + 32;
-        }
-
-    // Round to the nearest 10th
-    function nearest10th(n) {
-        return Math.round(n * 10) / 10;
-    }
-
-
 </script>
