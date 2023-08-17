@@ -18,7 +18,7 @@ function setThermometerTemperature(celsiusTemp) {
         maxTempC = 70;
 
 
-    scaleY += ((celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC)) * 1.0907555;
+    scaleY = ((celsiusTemp - minTempC) / (Math.abs(minTempC) + maxTempC)) * 1.086114;
 
     if (scaleY > scaleYMax)
         scaleY = scaleYMax;
