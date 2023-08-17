@@ -18,7 +18,6 @@ namespace CelsiusIntoFahrenheit.Controllers
             return View();
         }
 
-
         public IActionResult Converter()
         {
             return View();
@@ -53,7 +52,7 @@ namespace CelsiusIntoFahrenheit.Controllers
 
         private double convertingCToF(double celsius)
         {
-            return (celsius * 9.0 / 5.0) + 32.0;
+            return Math.Round(((celsius * 9.0 / 5.0) + 32.0), 5);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

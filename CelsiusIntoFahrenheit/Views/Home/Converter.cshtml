@@ -6,7 +6,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
 <script src="~/js/site.js"></script>
 
-<div class="container-fluid d-flex justify-content-center align-items-center full-height">
+<div class="d-flex justify-content-center align-items-center full-height">
     <div class="bordered-box">
 
         <h1 class="text-center mb-3 text-white">Celsius to Fahrenheit Converter</h1>
@@ -17,12 +17,14 @@
 
             <div class="col-md-8">
                 <form method="post" action="/Home/ConvertCelsiusToFahrenheit">
-                    <div class="form-group">
-                        <label for="celsius" style="font-size: 1.5em">Please Enter °C:</label>
-                        <input type="number" step="0.1" name="celsius" id="celsius" class="form-control" required />
-                    </div> 
-                    <div class="text-center mb-4">
-                        <input type="submit" value="Convert" class="btn btn-outline-dark" />
+                    <p class="lable" for="celsius">Please Enter °C:</p>
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <div class="input-group">
+                            <input type="number" step="0.1" name="celsius" id="celsius" class="form-control" required />
+                            <div class="input-group-append">
+                                <input type="submit" value="Convert" class="btn btn-outline-primary" />
+                            </div>
+                        </div>
                     </div>
                 </form>
 
