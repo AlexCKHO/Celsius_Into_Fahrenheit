@@ -18,7 +18,6 @@ namespace CelsiusIntoFahrenheit.Controllers
             return View();
         }
 
-
         public IActionResult Converter()
         {
             return View();

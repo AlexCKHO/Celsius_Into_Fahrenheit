@@ -47,13 +47,15 @@ footer {
 
 
 .btn.btn-outline-light {
+    font-size: 125%;
     padding: 10px 20px;
 }
 
-.intro,
-.intro-paragraph,
-.btn.btn-outline-light {
-    font-size: 150%; 
+
+.intro-item
+{
+    font-size: 250%;
+    margin: 40px 0;
 }
 
 
