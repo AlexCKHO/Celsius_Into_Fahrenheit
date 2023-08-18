@@ -38,7 +38,7 @@
                 @if (ViewData["CelsiusTemperature"] != null && ViewData["FahrenheitTemperature"] != null)
                 {
                     <div class="mt-4 alert alert-success text-center">
-                        <strong>@ViewData["CelsiusTemperature"]°C is equivalent to @ViewData["FahrenheitTemperature"]°F</strong>
+                        <strong>@ViewData["CelsiusTemperature"]°C = @ViewData["FahrenheitTemperature"]°F</strong>
                         <br>
                         <br>
                         <span>\(@ViewData["CelsiusTemperature"]^\circ \text{C} \times \frac{{9}}{{5}} + 32 = {@ViewData["FahrenheitTemperature"]}^\circ \text{F}\)</span>

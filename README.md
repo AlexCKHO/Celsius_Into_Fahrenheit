@@ -34,11 +34,11 @@ This web application allows users to convert temperatures from Celsius to Fahren
 ### Controller (`HomeController`)
 
 1. **Index()**: Returns the default view.
-2. **Convertor()**: Returns the converter view.
+2. **Converter()**: Returns the converter view.
 3. **ConvertCelsiusToFahrenheit()**: Takes the Celsius temperature as input, converts it to Fahrenheit, and returns the converter view with the result or an error message.
 4. **Error()**: Returns an error view.
 
-### View (`Convertor`)
+### View (`Converter`)
 
 1. **Form**: Input field for Celsius value and a conversion button.
 2. **Error Display**: Shows an error message for out-of-range values.
@@ -47,13 +47,19 @@ This web application allows users to convert temperatures from Celsius to Fahren
 
 ## Installation & Usage
 
+### Live Deployment:
+
+The application is hosted on Azure and optimized for both desktop and mobile. Access it [here](https://celsiusintofahrenheitmvc.azurewebsites.net/)
+
+### Local Usage:
+
 1. **Prerequisites**:
    - Ensure you have ASP.NET MVC set up on your machine.
    - Install necessary packages if prompted.
 
 2. **Clone the Repository**:
    ```bash
-   git clone [Repo-Url]
+   git clone https://github.com/AlexCKHO/Celsius_Into_Fahrenheit
    ```
 
 3. **Navigate to the Project Directory**:
@@ -66,7 +72,7 @@ This web application allows users to convert temperatures from Celsius to Fahren
 Use the in-built tools of ASP.NET MVC to build and run the project.
 
 5. **Usage**:
-- Navigate to the Convertor page.
+- Navigate to the Converter page.
 - Enter a Celsius value in the input field.
 - Click "Convert" to get the Fahrenheit equivalent.
 - Check the thermometer visualization to see the temperature representation.
@@ -78,11 +84,11 @@ As part of this mini project, I've included a set of NUnit tests to assess the f
 
 ### Running Tests
 
+To execute the NUnit tests, follow these steps:
+
 1. Make sure you have NUnit
 2. Open a terminal/command prompt, navigate to the project's root directory, and run:
    `dotnet test`
-
-To execute the NUnit tests, follow these steps:
 
 ## Limitations
 
